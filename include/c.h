@@ -180,7 +180,7 @@ errmsg(char doexit, int excode, char adderr, const char *fmt, ...)
 			fprintf(stderr, ": ");
 	}
 	if (adderr)
-		fprintf(stderr, "%m");
+		fprintf(stderr, "%s", strerror (errno));
 	fprintf(stderr, "\n");
 	if (doexit)
 		exit(excode);

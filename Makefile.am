@@ -2,6 +2,7 @@ AM_CPPFLAGS = \
 	-include config.h \
 	-I$(top_srcdir)/include \
 	-DLOCALEDIR=\"$(localedir)\" \
+	-D_POSIX=\"1\" \	
 	-D_PATH_LOCALSTATEDIR=\"${localstatedir}\"
 AM_CFLAGS = -fsigned-char $(WARN_CFLAGS)
 AM_LDFLAGS =
