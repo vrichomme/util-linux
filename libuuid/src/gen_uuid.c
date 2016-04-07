@@ -95,6 +95,7 @@
 #endif
 
 #ifdef _WIN32
+#ifndef _GETTIMEOFDAY_DEFINED
 static void gettimeofday (struct timeval *tv, void *dummy)
 {
 	FILETIME	ftime;
@@ -111,6 +112,7 @@ static void gettimeofday (struct timeval *tv, void *dummy)
 	tv->tv_sec = n / 1000000;
 	tv->tv_usec = n % 1000000;
 }
+#endif
 
 static int getuid (void)
 {
