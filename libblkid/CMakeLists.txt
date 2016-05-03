@@ -11,7 +11,7 @@ file(GLOB_RECURSE lib_src src/*.c src/*.h)
 list(APPEND lib_src ${CMAKE_SOURCE_DIR}/lib/blkdev.c)
 list(APPEND lib_src ${CMAKE_SOURCE_DIR}/lib/md5.c)
 list(APPEND lib_src ${CMAKE_SOURCE_DIR}/lib/crc32.c)
-list(APPEND lib_src ${CMAKE_SOURCE_DIR}/lib/sysfs_test.c)
+list(APPEND lib_src ${CMAKE_SOURCE_DIR}/lib/sysfs.c)
 list(APPEND lib_src ${CMAKE_SOURCE_DIR}/lib/fileutils.c)
 
 list(REMOVE_ITEM lib_src 
@@ -20,7 +20,7 @@ ${CMAKE_CURRENT_SOURCE_DIR}/src/topology/evms.c
 ${CMAKE_CURRENT_SOURCE_DIR}/src/topology/ioctl.c
 ${CMAKE_CURRENT_SOURCE_DIR}/src/topology/lvm.c
 ${CMAKE_CURRENT_SOURCE_DIR}/src/topology/md.c
-#${CMAKE_CURRENT_SOURCE_DIR}/src/topology/sysfs.c
+#${CMAKE_CURRENT_SOURCE_DIR}/src/topology/sysfs_test.c
 )
 
 file(GLOB samples_mkfs samples/mkfs.c )
