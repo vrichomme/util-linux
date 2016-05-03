@@ -178,12 +178,14 @@ struct blkid_struct_partition {
 
 	int		type;		/* partition type */
 	char		typestr[37];	/* partition type string (GPT and Mac) */
+	char	type_name[128];
 
 	unsigned long long flags;	/* partition flags / attributes */
 
 	int		partno;		/* partition number */
 	char		uuid[37];	/* UUID (when supported by PT), e.g GPT */
 	unsigned char	name[128];	/* Partition in UTF8 name (when supporte by PT), e.g. Mac */
+	
 
 	blkid_parttable	tab;		/* partition table */
 };
@@ -1466,6 +1468,23 @@ int blkid_partition_set_type_uuid(blkid_partition par, const unsigned char *uuid
 
 	blkid_unparse_uuid(uuid, par->typestr, sizeof(par->typestr));
 	return 0;
+}
+
+int blkid_partition_set_type_name(blkid_partition par,
+	const unsigned char *type_name, size_t len)
+{
+	if (!par)
+		return -1;
+
+	set_string((unsigned char *)par->type_name,
+		sizeof(par->type_name), type_name, len);
+
+	return 0;
+}
+
+const char *blkid_partition_get_type_name(blkid_partition par)
+{
+	return par && *par->type_name ? par->type_name : NULL;
 }
 
 /**

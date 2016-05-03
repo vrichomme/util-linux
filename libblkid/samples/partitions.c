@@ -86,6 +86,9 @@ int main(int argc, char *argv[])
 		p = blkid_partition_get_type_string(par);
 		if (p)
 			printf(" type='%s'", p);
+		p = blkid_partition_get_type_name(par);
+		if (p)
+			printf(" type_name='%s'", p);
 
 		putc('\n', stdout);
 	}
