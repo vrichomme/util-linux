@@ -40,6 +40,10 @@
 #include <stdarg.h>
 #include <string.h>
 
+#ifdef _MSC_VER
+char *__cdecl strtok_r(char *str, const char *delim, char **saveptr);
+#endif
+
 struct ul_debug_maskname {
 	const char *name;
 	int mask;
