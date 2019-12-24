@@ -1,0 +1,29 @@
+make  all-recursive
+make[1] : on entre dans le répertoire « /home/Vincent/posix4win/util-linux »
+Making all in po
+make[2] : on entre dans le répertoire « /home/Vincent/posix4win/util-linux/po »
+make[2]: rien à faire pour « all ».
+make[2] : on quitte le répertoire « /home/Vincent/posix4win/util-linux/po »
+make[2] : on entre dans le répertoire « /home/Vincent/posix4win/util-linux »
+  CC       libmount/python/pylibmount_la-pylibmount.lo
+In file included from C:/Developer/msys64/mingw64/include/python2.7/Python.h:8:0,
+                 from libmount/python/pylibmount.h:4,
+                 from libmount/python/pylibmount.c:21:
+C:/Developer/msys64/mingw64/include/python2.7/pyconfig.h:1254:15: error: two or more data types in declaration specifiers
+ #define gid_t int
+               ^
+C:/Developer/msys64/mingw64/include/python2.7/pyconfig.h:1283:15: error: two or more data types in declaration specifiers
+ #define uid_t int
+               ^
+In file included from libmount/python/pylibmount.h:7:0,
+                 from libmount/python/pylibmount.c:21:
+./libmount/src/libmount.h:29:20: fatal error: mntent.h: No such file or directory
+compilation terminated.
+Makefile:8623 : la recette pour la cible « libmount/python/pylibmount_la-pylibmount.lo » a échouée
+make[2]: *** [libmount/python/pylibmount_la-pylibmount.lo] Erreur 1
+make[2] : on quitte le répertoire « /home/Vincent/posix4win/util-linux »
+Makefile:11206 : la recette pour la cible « all-recursive » a échouée
+make[1]: *** [all-recursive] Erreur 1
+make[1] : on quitte le répertoire « /home/Vincent/posix4win/util-linux »
+Makefile:4706 : la recette pour la cible « all » a échouée
+make: *** [all] Erreur 2

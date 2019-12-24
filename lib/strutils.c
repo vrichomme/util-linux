@@ -11,11 +11,13 @@
 #include <sys/stat.h>
 #include <string.h>
 #include <assert.h>
+#include <sys/resource.h>
 
 #include "c.h"
 #include "nls.h"
 #include "strutils.h"
 #include "bitops.h"
+
 
 static int do_scale_by_power (uintmax_t *x, int base, int power)
 {
@@ -228,6 +230,7 @@ void *mempcpy(void *restrict dest, const void *restrict src, size_t n)
     return ((char *)memcpy(dest, src, n)) + n;
 }
 #endif
+
 
 #ifndef HAVE_STRNLEN
 size_t strnlen(const char *s, size_t maxlen)

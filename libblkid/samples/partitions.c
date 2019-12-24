@@ -35,6 +35,7 @@ int main(int argc, char *argv[])
 	if (!pr)
 		err(EXIT_FAILURE, "%s: faild to create a new libblkid probe",
 				devname);
+
 	/* Binary interface */
 	ls = blkid_probe_get_partitions(pr);
 	if (!ls)
@@ -54,6 +55,7 @@ int main(int argc, char *argv[])
 		blkid_parttable_get_type(root_tab),
 		(intmax_t)blkid_parttable_get_offset(root_tab),
 		blkid_parttable_get_id(root_tab));
+
 
 	/*
 	 * List partitions
@@ -89,6 +91,8 @@ int main(int argc, char *argv[])
 		p = blkid_partition_get_type_name(par);
 		if (p)
 			printf(" type_name='%s'", p);
+
+        int type = blkid_partition_get_type(par);
 
 		putc('\n', stdout);
 	}

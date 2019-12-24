@@ -13,6 +13,10 @@ list(APPEND lib_src ${CMAKE_SOURCE_DIR}/lib/md5.c)
 list(APPEND lib_src ${CMAKE_SOURCE_DIR}/lib/crc32.c)
 list(APPEND lib_src ${CMAKE_SOURCE_DIR}/lib/sysfs.c)
 list(APPEND lib_src ${CMAKE_SOURCE_DIR}/lib/fileutils.c)
+list(APPEND lib_src ${CMAKE_SOURCE_DIR}/lib/ismounted.c)
+list(APPEND lib_src ${CMAKE_SOURCE_DIR}/lib/canonicalize.c)
+list(APPEND lib_src ${CMAKE_SOURCE_DIR}/lib/ttyutils.c)
+list(APPEND lib_src ${CMAKE_SOURCE_DIR}/lib/strutils.c)
 
 list(REMOVE_ITEM lib_src 
 ${CMAKE_CURRENT_SOURCE_DIR}/src/topology/dm.c
@@ -40,7 +44,7 @@ target_link_libraries(libblkid posix4msvc)
 
 project(samples_mkfs)
 add_executable(samples_mkfs ${samples_mkfs})
-set_property(TARGET samples_mkfs PROPERTY VS_PLATFORM_TOOLSET_OVERRIDE "v140_clang_3_7")
+set_property(TARGET samples_mkfs PROPERTY VS_PLATFORM_TOOLSET_OVERRIDE "v140_clang_c2")
 target_include_directories(samples_mkfs PUBLIC
 	${CMAKE_SOURCE_DIR}/include
 	${CMAKE_SOURCE_DIR}/libblkid/src
@@ -50,7 +54,7 @@ target_link_libraries(samples_mkfs libblkid)
 
 project(samples_partitions)
 add_executable(samples_partitions ${samples_partitions})
-set_property(TARGET samples_partitions PROPERTY VS_PLATFORM_TOOLSET_OVERRIDE "v140_clang_3_7")
+set_property(TARGET samples_partitions PROPERTY VS_PLATFORM_TOOLSET_OVERRIDE "v140_clang_c2")
 target_include_directories(samples_mkfs PUBLIC
 	${CMAKE_SOURCE_DIR}/include
 	${CMAKE_SOURCE_DIR}/libblkid/src
@@ -60,7 +64,7 @@ target_link_libraries(samples_partitions libblkid)
 
 project(samples_superblocks)
 add_executable(samples_superblocks ${samples_superblocks})
-set_property(TARGET samples_superblocks PROPERTY VS_PLATFORM_TOOLSET_OVERRIDE "v140_clang_3_7")
+set_property(TARGET samples_superblocks PROPERTY VS_PLATFORM_TOOLSET_OVERRIDE "v140_clang_c2")
 target_include_directories(samples_mkfs PUBLIC
 	${CMAKE_SOURCE_DIR}/include
 	${CMAKE_SOURCE_DIR}/libblkid/src
@@ -70,7 +74,7 @@ target_link_libraries(samples_superblocks libblkid)
 
 project(samples_topology)
 add_executable(samples_topology ${samples_topology})
-set_property(TARGET samples_topology PROPERTY VS_PLATFORM_TOOLSET_OVERRIDE "v140_clang_3_7")
+set_property(TARGET samples_topology PROPERTY VS_PLATFORM_TOOLSET_OVERRIDE "v140_clang_c2")
 target_include_directories(samples_mkfs PUBLIC
 	${CMAKE_SOURCE_DIR}/include
 	${CMAKE_SOURCE_DIR}/libblkid/src

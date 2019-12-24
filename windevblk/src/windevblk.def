@@ -1,0 +1,18 @@
+LIBRARY   windevblk
+EXPORTS
+DevBlkEnumDrives
+DevBlkEnumDevices
+DevBlkOpen
+DevBlkGetFileSizeEx
+DevBlkGetDiskHandle
+DevBlkFromDiskHandle
+DevBlkIsValidHandle
+DevBlkSetPointer
+DevBlkSetPointerEx
+DevBlkRead
+DevBlkWrite
+DevBlkClose
+devblk_open
+devblk_close
+devblk_fstat
+			

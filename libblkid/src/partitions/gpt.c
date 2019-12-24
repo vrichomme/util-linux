@@ -465,7 +465,7 @@ static int probe_gpt_pt(blkid_probe pr,
 		for (i = 0; i < (sizeof(known_guids) / sizeof(known_guids[0])); i++) {
 			if (!strcmp(blkid_partition_get_type_string(par), known_guids[i].typestr)) {
 				blkid_partition_set_type_name(par, 
-					known_guids[i].type_name, 
+					(const unsigned char *)known_guids[i].type_name, 
 					sizeof(known_guids[i].type_name));
 			}
 		}

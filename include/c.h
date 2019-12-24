@@ -9,6 +9,7 @@
 #include <stddef.h>
 #include <stdint.h>
 #include <stdio.h>
+#include <string.h>
 #include <unistd.h>
 #include <stdarg.h>
 #include <stdlib.h>
@@ -49,7 +50,7 @@
 
 #else /* !__GNUC__ */
 # define __must_be_array(a)	0
-# define __attribute__(_arg_)
+//# define __attribute__(_arg_)
 # define ignore_result(x) ((void) (x))
 #endif /* !__GNUC__ */
 

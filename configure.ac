@@ -2139,6 +2139,8 @@ libsmartcols/src/libsmartcols.h
 po/Makefile.in
 ])
 
+AC_DEFINE(__USE_MAXGW, 1, __USE_MAXGW)
+
 AC_OUTPUT
 
 AC_MSG_RESULT([
